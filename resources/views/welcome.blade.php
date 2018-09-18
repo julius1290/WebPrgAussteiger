@@ -63,6 +63,10 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <script>
+            const blabla = (a,b) => {alert(a+b)};
+        </script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -80,6 +84,9 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+                </div>
+                <div>
+                    <button onclick="blabla(2,4)">Das ist ein Test</button>
                 </div>
 
                 <div class="links">
