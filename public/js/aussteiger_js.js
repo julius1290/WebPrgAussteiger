@@ -1,5 +1,11 @@
-export const test = (a,b) => {
-    return a+b;
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+const test = (a,b) => {
+    alert (a+b);
 };
 
 

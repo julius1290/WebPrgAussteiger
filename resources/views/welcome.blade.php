@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Aussteigen</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -64,9 +64,6 @@
             }
         </style>
 
-        <script>
-            const blabla = (a,b) => {alert(a+b)};
-        </script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -86,18 +83,10 @@
                     Laravel
                 </div>
                 <div>
-                    <button onclick="blabla(2,4)">Das ist ein Test</button>
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <button onclick="test(5,5)">Das ist ein Test</button>
                 </div>
             </div>
         </div>
+        <script src=" {{asset('js/aussteiger_js.js') }} "></script>
     </body>
 </html>
