@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 
 Route::get("ausstieg/{daten}", 'Controller@GetsomeData');
+
+Route::get("/test", 'Controller@getTestSite');
+

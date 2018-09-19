@@ -7,6 +7,13 @@ $( document ).ready(function() {
 	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	    }
 	});
+
+    $("#example-basic").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        autoFocus: true
+    });
 });
 
 
@@ -70,3 +77,6 @@ function sendData() {
         createAlert("#alert", "warning", "Bitte alle Felder ausfüllen!");
     }
 }
+
+
+

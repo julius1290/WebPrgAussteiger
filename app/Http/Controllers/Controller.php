@@ -16,4 +16,8 @@ class Controller extends BaseController
 
         $results = DB::table("tesrt")->get();
     }
+
+    function getTestSite() {
+        return view('test');
+    }
 }
