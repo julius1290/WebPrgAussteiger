@@ -1,8 +1,5 @@
 "use strict";
 
-const test = (a,b) => {
-    alert (a+b);
-};
 
 $( document ).ready(function() {
 	$.ajaxSetup({

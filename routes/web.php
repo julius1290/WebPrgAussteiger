@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get("ausstieg/{daten}", 'Controller@GetsomeData');
