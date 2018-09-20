@@ -23,6 +23,53 @@
             background-color: #0065a8;
         }
     </style>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="bilder/1.jpg?auto=yes&bg=777&fg=555&text=1" alt="1">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/2.jpg?auto=yes&bg=666&fg=444&text=2" alt="2">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/3.jpg?auto=yes&bg=555&fg=333&text=3" alt="3">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/4.jpg?auto=yes&bg=555&fg=333&text=4" alt="4">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/5.jpg?auto=yes&bg=555&fg=333&text=5" alt="5">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/6.jpg?auto=yes&bg=555&fg=333&text=6" alt="6">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/7.jpg?auto=yes&bg=555&fg=333&text=7" alt="7">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="bilder/8.jpg?auto=yes&bg=555&fg=333&text=8" alt="8">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
     <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
