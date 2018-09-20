@@ -49,6 +49,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/check">MySQL Test</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/impressum">Impressum</a>
+                </li>
             </ul>
         </div>
     </nav>

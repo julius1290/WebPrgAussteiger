@@ -27,4 +27,7 @@ class Controller extends BaseController
     function getAboutUsView() {
         return view('about_us');
     }
+    function getImpressumView() {
+        return view('impressum');
+    }
 }
