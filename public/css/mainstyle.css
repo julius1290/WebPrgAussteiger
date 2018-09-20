@@ -212,10 +212,10 @@ html, body {
     height: 100%;
 }
 
-.wizard > .content > .body input {
+/*.wizard > .content > .body input {
     display: block;
     border: 1px solid #ccc;
-}
+}*/
 
 .wizard > .content > .body input[type="checkbox"] {
     display: inline-block;
