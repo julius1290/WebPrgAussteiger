@@ -66,12 +66,9 @@ console.log('lel');
             timeout: 5000,
             data: {geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion},
             success: function(data) {
-                if (data.status.toLowerCase() === "ok") {
-                	// TODO: Daten anzeigen
-                    // createAlert("#alert", "success", "Erfolgreich gespeichert!");
-                } else {
-                    createAlert("#alert", "warning", "Fehler beim Senden der Daten: " + data.message);
-                }
+                alert("lol");
+                data = JSON.parse(data);
+                console.log(data);
             },
             error: function() {
                 createAlert("#alert", "warning", "Fehler beim Senden der Daten: Fehler bei der Übertragung!");
