@@ -20,4 +20,8 @@ class Controller extends BaseController
     function getTestSite() {
         return view('test');
     }
+
+    function getContactView() {
+        return view('contact');
+    }
 }

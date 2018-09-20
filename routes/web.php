@@ -25,3 +25,5 @@ Route::post("/check", 'DataBaseController@checkDbConnection');
 Route::get("/check", 'DataBaseController@getCheckDbSite');
 
 Route::post("/calculate", 'CalculateController@calculateResult');
+
+Route::get("/contact", 'Controller@getContactView');
