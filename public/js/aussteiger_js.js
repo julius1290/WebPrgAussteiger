@@ -50,8 +50,13 @@ function createAlert(outputElement, cssClass, text, append = false) {
 function sendData() {
     let error = false;
 
-    let feld = $('#feld').val();
-    if (feld1 == '' || feld2 == '') error = true;
+    let geschlecht = $('#geschlecht').val();
+    let religion = $('#religion').val();
+    let regierungsform = $('#regierungsform').val();
+    let klima = $('#klima').val();
+    let gesundheit = $('#gesundheit').val();
+    let infrastruktur = $('#infrastruktur').val();
+    if (geschlecht == '' || regierungsform == '' || klima == '' || gesundheit == '' || infrastruktur == '' || religion == '') error = true;
 
     if (error === false) {
         $.ajax({
@@ -59,7 +64,7 @@ function sendData() {
             url: "ajax.php",
             cache: false,
             timeout: 5000,
-            data: {action: 'getData', feld1: feld},
+            data: {action: 'getData', geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion},
             success: function(data) {
                 if (data.status.toLowerCase() === "ok") {
                 	// TODO: Daten anzeigen
