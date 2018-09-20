@@ -54,7 +54,7 @@ class CalculateController extends Controller
 		if (!empty($regierung)) $wherestring .= ' AND regierungsform='.$regierung;
 		if (!empty($religion)) $wherestring .= ' AND religion='.$religion;
 		
-		if (!empty($gesundheit)) $wherestring .= ' AND gesundheitindex BETWEEN '.$gesundheit_a.' AND '.$gesundheit_b; // 0-99
+		if (!empty($gesundheit)) $wherestring .= ' AND gesundheitindex BETWEEN '.$gesundheit_a.' AND '.$gesundheit_b; // 0-99 - sterblichkeitsrate
 		if (!empty($infrastruktur)) $wherestring .= ' AND infrastrukturindex BETWEEN '.$infrastruktur_a.' AND '.$infrastruktur_b; // 0-5
 
          $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur BETWEEN '.$klima_a.' AND '.$klima_b.$wherestring.' LIMIT 3');
