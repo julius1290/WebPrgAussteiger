@@ -23,3 +23,5 @@ Route::get("/test", 'Controller@getTestSite');
 Route::post("/check", 'DataBaseController@checkDbConnection');
 
 Route::get("/check", 'DataBaseController@getCheckDbSite');
+
+Route::post("/calculate", 'CalculateController@calculateResult');
