@@ -35,7 +35,7 @@
                         <input id="weiblich" name="geschlecht" value="2" type="radio" required>
                         <label for="weiblich" title="Weiblich"><i class="fas fa-female fa-2x"></i></label>
                         <input id="geschlechtslos" name="geschlecht" value="2" type="radio" required>
-                        <label for="geschlechtslos" title="Geschlechtslos"><i class="fas fa-genderless fa-2x"></i>Test</label>
+                        <label for="geschlechtslos" title="Geschlechtslos"><i class="fas fa-genderless fa-2x"></i></label>
                         <input id="transgender" name="geschlecht" value="2" type="radio" required>
                         <label for="transgender" title="Transgender"><i class="fas fa-transgender fa-2x"></i></label>
                     </fieldset>
