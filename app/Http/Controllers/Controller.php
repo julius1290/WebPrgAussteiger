@@ -24,4 +24,7 @@ class Controller extends BaseController
     function getContactView() {
         return view('contact');
     }
+    function getAboutUsView() {
+        return view('about_us');
+    }
 }
