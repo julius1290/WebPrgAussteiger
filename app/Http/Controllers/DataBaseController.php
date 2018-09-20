@@ -13,7 +13,6 @@ class DataBaseController extends Controller
         $dbCount = DB::table('aussteiger_table')->count();
         $dbCount = json_encode($dbCount);
         return $dbCount;
-        //das ist ein test
     }
 
     function getCheckDbSite() {

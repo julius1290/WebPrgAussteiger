@@ -49,22 +49,22 @@ function createAlert(outputElement, cssClass, text, append = false) {
  */
 function sendData() {
     let error = false;
-
+console.log('lel');
     let geschlecht = $('#geschlecht').val();
     let religion = $('#religion').val();
     let regierungsform = $('#regierungsform').val();
     let klima = $('#klima').val();
     let gesundheit = $('#gesundheit').val();
     let infrastruktur = $('#infrastruktur').val();
-    if (geschlecht == '' || regierungsform == '' || klima == '' || gesundheit == '' || infrastruktur == '' || religion == '') error = true;
+    if (geschlecht == '' || gesundheit == '' || infrastruktur == '') error = true;
 
     if (error === false) {
         $.ajax({
             type: "POST",
-            url: "ajax.php",
+            url: "/calculate",
             cache: false,
             timeout: 5000,
-            data: {action: 'getData', geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion},
+            data: {geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion},
             success: function(data) {
                 if (data.status.toLowerCase() === "ok") {
                 	// TODO: Daten anzeigen
