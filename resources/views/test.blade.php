@@ -94,13 +94,13 @@
                 <div class="form-group">
                     <label for="gesundheit">Gesundheitsindex</label>
                     <div class="input-group">
-                        <input type="range" class="custom-range" min="0" max="10" name="gesundheit" id="gesundheit">
+                        <input type="range" class="custom-range" min="0" max="9.9" step="0.1" name="gesundheit" id="gesundheit">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="infrastruktur">Infrastrukturindex</label>
                     <div class="input-group">
-                        <input type="range" class="custom-range" min="0" max="10" name="infrastruktur"
+                        <input type="range" class="custom-range" min="0" max="10"  name="infrastruktur"
                                id="infrastruktur">
                     </div>
                 </div>

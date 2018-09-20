@@ -13,10 +13,15 @@ class CalculateController extends Controller
         $body = json_decode($body, true);
         $geschlecht = $body["geschlecht"];
         $regierung = $body["regierungsform"];
-        $klima = (int) $body["klima"];
-        $gesundheit = ((double) $body["gesundheit"])*10;
-        $infrastruktur = ((double) $body["infrastruktur"])/2;
+        $klima = $body["klima"];
+        $gesundheit = $body["gesundheit"];
+        $infrastruktur = $body["infrastruktur"];
         $religion = $body["religion"];
+
+        $frauenfeindlichkeit = 1;
+
+        if($geschlecht != 1)
+            $frauenfeindlichkeit = 0;
 
         $klima_a = 1;
         $klima_b = 1;
@@ -52,8 +57,8 @@ class CalculateController extends Controller
 		if (!empty($gesundheit)) $wherestring .= ' AND gesundheitindex BETWEEN '.$gesundheit_a.' AND '.$gesundheit_b; // 0-99
 		if (!empty($infrastruktur)) $wherestring .= ' AND infrastrukturindex BETWEEN '.$infrastruktur_a.' AND '.$infrastruktur_b; // 0-5
 
-        // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur BETWEEN '.$klima_a.' AND '.$klima_b.$wherestring)->get();
-        $return = DB::table('aussteiger_table')->select('*')->get();
+         $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur BETWEEN '.$klima_a.' AND '.$klima_b.$wherestring);
+       // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur > 10');
 
     	return json_encode($return);
 
