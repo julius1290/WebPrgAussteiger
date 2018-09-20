@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Aussteigen</title>
 
@@ -38,6 +39,9 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/test">Test</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/check">MySQL Test</a>
                 </li>
             </ul>
         </div>

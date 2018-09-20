@@ -110,4 +110,5 @@
     <button type="submit" class="btn btn-success">Suchen</button>
     <script src=" {{asset('js/jquery.steps.js') }} "></script>
     <script src=" {{asset('js/aussteiger_js.js') }} "></script>
+
 @stop

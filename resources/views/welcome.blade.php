@@ -8,7 +8,6 @@
     </div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-<script src="jquery.scrollmagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 
-<script src=" {{asset('js/aussteiger_js.js') }} "></script>
 @stop

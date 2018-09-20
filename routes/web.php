@@ -20,3 +20,6 @@ Route::get("ausstieg/{daten}", 'Controller@GetsomeData');
 
 Route::get("/test", 'Controller@getTestSite');
 
+Route::post("/check", 'DataBaseController@checkDbConnection');
+
+Route::get("/check", 'DataBaseController@getCheckDbSite');
