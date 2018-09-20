@@ -29,3 +29,5 @@ Route::post("/calculate", 'CalculateController@calculateResult');
 Route::get("/contact", 'Controller@getContactView');
 
 Route::get("/aboutus", 'Controller@getAboutUsView');
+
+Route::get("/impressum", 'Controller@getImpressumView');
