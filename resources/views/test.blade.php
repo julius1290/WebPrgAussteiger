@@ -23,9 +23,7 @@
             background-color: #0065a8;
         }
     </style>
-
-</div>
-    <div style="padding-top: 15px">
+    <div style="padding-top: 65px">
         <div id="example-basic">
             <h3>Angaben zur Person</h3>
             <section>
@@ -37,7 +35,7 @@
                         <input id="weiblich" name="geschlecht" value="2" type="radio" required>
                         <label for="weiblich" title="Weiblich"><i class="fas fa-female fa-2x"></i></label>
                         <input id="geschlechtslos" name="geschlecht" value="2" type="radio" required>
-                        <label for="geschlechtslos" title="Geschlechtslos"><i class="fas fa-genderless fa-2x"></i></label>
+                        <label for="geschlechtslos" title="Geschlechtslos"><i class="fas fa-genderless fa-2x"></i>Test</label>
                         <input id="transgender" name="geschlecht" value="2" type="radio" required>
                         <label for="transgender" title="Transgender"><i class="fas fa-transgender fa-2x"></i></label>
                     </fieldset>
@@ -78,9 +76,6 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <h3>Klima, Infrastruktur, Gesundheit</h3>
-            <section>
                 <div class="form-group">
                     <label for="klima">Klima</label>
                     <div class="input-group">

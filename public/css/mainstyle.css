@@ -378,3 +378,25 @@ html, body {
 .tabcontrol > .content > .body ul > li {
     display: list-item;
 }
+
+.form-radio > input {
+    display: none;
+}
+
+.form-radio > label {
+    display: inline-block;
+    height: 50px;
+    line-height: 1.22em;
+    margin: 2px;
+    padding: 6px 0;
+    text-align: center;
+    width: 50px;
+    border: 1px solid #0065a8;
+    color: #0065a8;
+    border-radius: 100px;
+}
+
+.form-radio > input:checked + label, .form-radio > input + label:hover {
+    color: #fff;
+    background-color: #0065a8;
+}
