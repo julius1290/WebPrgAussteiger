@@ -31,3 +31,5 @@ Route::get("/contact", 'Controller@getContactView');
 Route::get("/aboutus", 'Controller@getAboutUsView');
 
 Route::get("/impressum", 'Controller@getImpressumView');
+
+Route::get("/FAQ", 'Controller@getFAQView');
