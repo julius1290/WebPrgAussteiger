@@ -1,6 +1,6 @@
 @extends("layout") @section("content")
+    <div class="container" style="padding-top: 65px">
     <section>
-        <h1 class="noDisplay">Main Content</h1>
         <div class='impressum'><h1>Impressum</h1><p>Angaben gemäß § 5 TMG</p><p>Max Muster <br>
                 Musterweg<br>
                 12345 Musterstadt <br>
@@ -18,4 +18,5 @@
         </div>
 
     </section>
+    </div>
 @stop

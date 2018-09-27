@@ -1,12 +1,6 @@
 @extends("layout") @section("content")
-<div class="container">
+    <div class="container" style="padding-top: 65px">
 
-    <div class="row">
-        <div class="col-sm">
-            <h1>Das sind wir!</h1>
-            <p></p>
-        </div>
-    </div>
     <h1>Frequently Asked Questions</h1>
     <p></p>
     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
@@ -21,7 +15,7 @@
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
         ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     <p></p>
-    <div id="accordion">
+    <div id="accordion" style="padding-top: 10px">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -90,6 +84,5 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 @stop

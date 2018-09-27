@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get("ausstieg/{daten}", 'Controller@GetsomeData');
 
-Route::get("/test", 'Controller@getTestSite');
+Route::get("/persönlichkeitstest", 'Controller@getTestSite');
 
 Route::post("/check", 'DataBaseController@checkDbConnection');
 

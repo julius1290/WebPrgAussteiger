@@ -71,11 +71,10 @@ class CalculateController extends Controller
         // Slider Infrastruktur von 0 bis 10
         if (!empty($infrastruktur)) $wherestring .= ' AND infrastrukturindex BETWEEN '.$infrastruktur_a.' AND '.$infrastruktur_b; // 0-5
 
-        echo $wherestring;
 
        $return = DB::select('SELECT * FROM aussteiger_table'.$wherestring.' LIMIT 3');
         // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur > 10');
 
-    	return json_encode($geschlecht);
+    	return json_encode($return);
     }
 }

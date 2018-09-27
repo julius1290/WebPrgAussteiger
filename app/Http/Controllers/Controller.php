@@ -18,7 +18,7 @@ class Controller extends BaseController
     }
 
     function getTestSite() {
-        return view('test');
+        return view('persönlichkeitstest');
     }
 
     function getContactView() {
