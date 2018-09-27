@@ -6,7 +6,7 @@ $(document).ready(function () {
     //build a scene
     const ourScene = new ScrollMagic.Scene( {
         triggerElement: '#picSlider',
-        triggerHook: 0.9,
+        triggerHook: 0.5,
     })
         .setClassToggle('#picSlider', 'fade-in') // add class to slide in
         .addIndicators({

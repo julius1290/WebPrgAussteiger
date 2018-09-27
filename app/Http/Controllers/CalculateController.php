@@ -9,8 +9,7 @@ class CalculateController extends Controller
 {
     function calculateResult(Request $request) {
 
-        $body          = $request->getContent();
-        $body          = json_decode($body, true);
+        $body          = json_decode($request->getContent(), true);
         
         $geschlecht          = $body["geschlecht"];
         $regierung           = $body["regierungsform"];
@@ -72,9 +71,9 @@ class CalculateController extends Controller
         // Slider Infrastruktur von 0 bis 10
 		if (!empty($infrastruktur)) $wherestring .= ' AND infrastrukturindex BETWEEN '.$infrastruktur_a.' AND '.$infrastruktur_b; // 0-5
 
-        $return = DB::select('SELECT * FROM aussteiger_table'.$wherestring.' LIMIT 3');
+       // $return = DB::select('SELECT * FROM aussteiger_table'.$wherestring.' LIMIT 3');
         // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur > 10');
 
-    	return json_encode($return);
+    	return json_encode($geschlecht);
     }
 }
