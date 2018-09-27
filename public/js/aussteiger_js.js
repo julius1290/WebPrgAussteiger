@@ -72,7 +72,7 @@ function showData(data) {
 function sendData() {
     let error = false;
 console.log('lel');
-    let geschlecht = $('#geschlecht').val();
+    let geschlecht = $("input[name='geschlecht']").val();;
     let religion = $('#religion').val();
     let regierungsform = $('#regierungsform').val();
     let klima = $('#klima').val();
@@ -86,7 +86,7 @@ console.log('lel');
             url: "/calculate",
             cache: false,
             timeout: 5000,
-            data: {geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion},
+            data:JSON.stringify({geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion}),
             success: function(data) {
                 alert("lol");
                 data = JSON.parse(data);
