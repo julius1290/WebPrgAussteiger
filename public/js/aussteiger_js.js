@@ -48,20 +48,19 @@ function createAlert(outputElement, cssClass, text, append = false) {
  * Zeigt Ergebnisse an
  */
 function showData(data) {
-    // If leer -> Meldung keine Ergebnisse
     let results = data;
     $("#results").empty();
     let html;
     if (results.length >= 1) {
         $("#alert").empty();
         for (let i = 0; i < results.length; i++) {
-            html = '<div class="entry"><div class="entry-card"><div class="card-body"><h5 class="card-title">' + complaints[i].customer.name + '</h5><h6 class="card-subtitle mb-2 text-muted"><time>' + complaints[i].compDate + '</time> von ' + complaints[i].user.firstname + ' ' + complaints[i].user.lastname + '</h6><p class="card-text">' + complaints[i].details.substr(0, 100) + '...</p>';
-            html += '</div><div id="card-footer-' + complaints[i].id + '" class="card-footer"><span class="card-link fas fa-edit" onclick="loadEditComplaint(' + complaints[i].id + ')" data-toggle="modal" data-target="#editComplaint"></span><span id="status-' + complaints[i].id + '" class="badge badge-pill badge-primary card-link" onclick="statusComplaint(' + complaints[i].id + ', ' + complaints[i].status + ')">' + statusName[complaints[i].status-1] + '</span></div></div>';
-            $("#results").append(html);
+            // html = '<div class="entry"><div class="entry-card"><div class="card-body"><h5 class="card-title">' + complaints[i].customer.name + '</h5><h6 class="card-subtitle mb-2 text-muted"><time>' + complaints[i].compDate + '</time> von ' + complaints[i].user.firstname + ' ' + complaints[i].user.lastname + '</h6><p class="card-text">' + complaints[i].details.substr(0, 100) + '...</p>';
+            // html += '</div><div id="card-footer-' + complaints[i].id + '" class="card-footer"><span class="card-link fas fa-edit" onclick="loadEditComplaint(' + complaints[i].id + ')" data-toggle="modal" data-target="#editComplaint"></span><span id="status-' + complaints[i].id + '" class="badge badge-pill badge-primary card-link" onclick="statusComplaint(' + complaints[i].id + ', ' + complaints[i].status + ')">' + statusName[complaints[i].status-1] + '</span></div></div>';
+            // $("#results").append(html);
         }
     }
     else {
-            createAlert("#alert", "info", "Es wurden keine Länder gefunden.");
+            createAlert("#alert", "info", "Es wurden keine Ergebnisse gefunden.");
         }
 
 }
@@ -88,9 +87,8 @@ console.log('lel');
             timeout: 5000,
             data:JSON.stringify({geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion}),
             success: function(data) {
-                alert("lol");
                 data = JSON.parse(data);
-                console.log(data);
+                showData(data);
             },
             error: function() {
                 createAlert("#alert", "warning", "Fehler beim Senden der Daten: Fehler bei der Übertragung!");

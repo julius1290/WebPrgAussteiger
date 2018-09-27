@@ -106,6 +106,8 @@
             </section>
         </div>
     </div>
+    <div id="alert"></div>
+    <div id="results"></div>
     <button type="reset" class="btn btn-danger">Abbrechen</button>
     <button type="submit" class="btn btn-success" onclick="sendData()">Suchen</button>
     <script src=" {{asset('js/jquery.steps.js') }} "></script>
