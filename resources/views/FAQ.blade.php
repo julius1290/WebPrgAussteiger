@@ -1,12 +1,6 @@
 @extends("layout") @section("content")
-<div class="container">
+    <div class="container" style="padding-top: 65px">
 
-    <div class="row">
-        <div class="col-sm">
-            <h1>Das sind wir!</h1>
-            <p></p>
-        </div>
-    </div>
     <h1>Frequently Asked Questions</h1>
     <p></p>
     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
@@ -90,6 +84,5 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 @stop

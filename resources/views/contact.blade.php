@@ -1,10 +1,9 @@
 @extends("layout")
 @section("content")
-<div class="container">
+    <div class="container" style="padding-top: 65px">
 
         <div class="row">
             <div class="col-sm">
-                <h1>Ihre Nachricht an uns!</h1>
                 <h1>Ihre Nachricht an uns!</h1>
                 <p>Senden Sie uns Ihre Fragen, Anregungen, Lob, Kritik, etc.</p>
             </div>
