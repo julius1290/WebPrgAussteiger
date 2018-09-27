@@ -1,11 +1,27 @@
 @extends('layout')
 @section('content')
-    <div class="flex-center position-ref full-height"  id="firstTextBox">
+    <div class="flex-center position-ref full-height" id="firstTextBox">
         <div class="container">
             <div class="title m-b-md" id="firstText">
                 Weg von Technik
             </div>
         </div>
+    </div>
+    <div class="pics container-fluid" id="picOneDiv">
+        <img src="{{asset('bilder/5.jpg?auto=yes&bg=777&fg=555&text=1')}}" id="picOne">
+    </div>
+    <div class="questions">
+        <h5>
+            Wie funktioniert die Auswahl des Ausstieglandes?
+        </h5>
+        <div>
+            <div>
+                Ein komplexer Algorithmus gleicht die von Ihnen eingegebenen Daten mit unserer Datenbank ab.
+                Anschlißend werden die besten Länder vorgeschlagen.
+            </div>
+        </div>
+    </div>
+
     </div>
     <div class="container-fluid" id="picSlider">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -22,10 +38,10 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{asset('bilder/1.jpg?auto=yes&bg=777&fg=555&text=1')}}" alt="1">
+                    <img class="d-block " src="{{asset('bilder/1.jpg?auto=yes&bg=777&fg=555&text=1')}}" alt="1">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('bilder/2.jpg?auto=yes&bg=777&fg=555&text=1')}}" alt="2">
+                    <img class="d-block " src="{{asset('bilder/2.jpg?auto=yes&bg=777&fg=555&text=1')}}" alt="2">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{{asset('bilder/3.jpg?auto=yes&bg=777&fg=555&text=1')}}" alt="3">
@@ -59,7 +75,8 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true"
                                 aria-controls="collapseOne">
                             Wie funktioniert die Auswahl des Ausstieglandes?
                         </button>
@@ -84,7 +101,8 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body">
-                        Die von Ihnen angegeben Daten werden ausschließlich für die Berechnung des Landes genutzt und nicht
+                        Die von Ihnen angegeben Daten werden ausschließlich für die Berechnung des Landes genutzt und
+                        nicht
                         gespeichert.
                     </div>
                 </div>

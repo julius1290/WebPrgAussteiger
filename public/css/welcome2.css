@@ -1,3 +1,7 @@
+body {
+    background-color: #1b1e21;
+}
+
 #firstTextBox {
     background-color: #1b1e21;
     color: #ffffff;
@@ -11,6 +15,7 @@
 
     opacity: 0;
     text-align: center;
+    font-size: 75px;
 
     -webkit-animation-delay: 1s;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -22,6 +27,20 @@
     animation-fill-mode: forwards;
 
 }
+
+.pics{
+    background-color: #1b1e21;
+}
+
+#picOne {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-bottom: 40px;
+}
+
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -54,6 +73,7 @@
 
 
 #picSlider {
+    height: 40%;
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-out;
@@ -62,4 +82,10 @@
 #picSlider.fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+.questions {
+    background-color: #1b1e21;
+    text-align: center;
+    color: #ffffff;
 }
