@@ -16,7 +16,7 @@ const queryDatabase = () => {
             JSON.parse(data);
             $.LoadingOverlay("hide");
             if (data > 0)
-                alert("Connection Succesfull");
+                alert("Connection Succesfull" + data);
         },
         error: function () {
             $.LoadingOverlay("hide");
