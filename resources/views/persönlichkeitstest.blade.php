@@ -81,9 +81,9 @@
                         <select class="form-control" id="klima" name="klima" required>
                             <option value="">Bitte wählen</option>
                             <option value="0">egal</option>
-                            <option value="Warm">Warm</option>
-                            <option value="Kalt">Kalt</option>
-                            <option value="Gemäßigt">Gemäßigt</option>
+                            <option value="warm">Warm</option>
+                            <option value="kalt">Kalt</option>
+                            <option value="mittel">Gemäßigt</option>
                         </select>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-sun"></i></span>

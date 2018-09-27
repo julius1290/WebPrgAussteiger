@@ -27,28 +27,28 @@ class CalculateController extends Controller
         // 0 für egal, warm, kalt, gemÃ¤ÃŸigt
         switch ($klima) {
             case "kalt":
-                $klima_a = -100;
-                $klima_b = 14;
-                break;
+            $klima_a = -100;
+            $klima_b = 14;
+            break;
             case "mittel":
-                $klima_a = 15;
-                $klima_b = 25;
-                break;
+            $klima_a = 15;
+            $klima_b = 25;
+            break;
             case "warm":
-                $klima_a = 26;
-                $klima_b = 100;
-                break;
+            $klima_a = 26;
+            $klima_b = 100;
+            break;
             case 0:
-                $klima_a = -100;
-                $klima_b = 100;
-                break;
+            $klima_a = -100;
+            $klima_b = 100;
+            break;
         }
 
         $gesundheit_a = 100-($gesundheit*10)-10;
         $gesundheit_b = 100-($gesundheit*10)+10;
 
-        $infrastruktur_a = $infrastruktur-4;
-        $infrastruktur_b = $infrastruktur+4;
+        $infrastruktur_a = $infrastruktur-2;
+        $infrastruktur_b = $infrastruktur+2;
 
         // Klima
         $wherestring = ' WHERE durchschnittstemperatur BETWEEN '.$klima_a.' AND '.$klima_b;
@@ -59,10 +59,10 @@ class CalculateController extends Controller
         
         // 0 für egal, Monarchie, Diktatur, Demokratie, Kommunismus
         // empty prüft auch auf den Wert 0
-        if (!empty($regierung)) $wherestring .= ' AND regierungsform="'.$regierung.'"'; // stehen so in DB
+        if (!empty($regierung)) $wherestring .= ' AND regierungsform=\''.$regierung.'\''; // stehen so in DB
         
         // 0 für egal, Christentum, Islam, Buddhismus, Hindu, Atheist
-        if (!empty($religion)) $wherestring .= ' AND religion="'.$religion.'"';
+        if (!empty($religion)) $wherestring .= ' AND religion=\''.$religion.'\'';
         
         // Slider Gesundheit von 0 bis 10
         // 100-9*10=10
@@ -72,9 +72,9 @@ class CalculateController extends Controller
         if (!empty($infrastruktur)) $wherestring .= ' AND infrastrukturindex BETWEEN '.$infrastruktur_a.' AND '.$infrastruktur_b; // 0-5
 
 
-       $return = DB::select('SELECT * FROM aussteiger_table'.$wherestring.' LIMIT 3');
+        $return = DB::select('SELECT land, frauenfeindlichkeit, religion, durchschnittstemperatur, regierungsform, latitude, longitude FROM aussteiger_table t INNER JOIN aussteiger_locations l ON t.land=l.name'.$wherestring.' LIMIT 3');
         // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur > 10');
 
-    	return json_encode($return);
+        return json_encode($return);
     }
 }
