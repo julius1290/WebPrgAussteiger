@@ -15,7 +15,8 @@ $(document).ready(function () {
         .addTo(controller);
 
     const headline = new ScrollMagic.Scene({
-        triggerElement: '#firstText'
+        triggerElement: '#firstText',
+        duration: 700
     }).setPin('#firstText')
         .addTo(controller);
 });

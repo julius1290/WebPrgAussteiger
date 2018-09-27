@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="pics container-fluid" id="picOneDiv">
-        <img src="{{asset('bilder/5.jpg?auto=yes&bg=777&fg=555&text=1')}}" id="picOne">
+        <img src="{{asset('bilder/5.jpg?auto=yes&bg=777&fg=555&text=1')}}" class="picture">
     </div>
     <div class="questions">
         <h5>
@@ -18,6 +18,51 @@
             <div>
                 Ein komplexer Algorithmus gleicht die von Ihnen eingegebenen Daten mit unserer Datenbank ab.
                 Anschlißend werden die besten Länder vorgeschlagen.
+            </div>
+        </div>
+    </div>
+    <div class="pics container-fluid" id="picTwoDiv">
+        <img src="{{asset('bilder/2.jpg?auto=yes&bg=777&fg=555&text=1')}}" class="picture">
+    </div>
+    <div class="questions">
+        <h5>
+            Was passiert mit den von mir angegebenen Daten?
+        </h5>
+        <div>
+            <div>
+                Die von Ihnen angegeben Daten werden ausschließlich für die Berechnung des Landes genutzt und
+                nicht
+                gespeichert.
+            </div>
+        </div>
+    </div>
+    <div class="pics container-fluid" id="picThreeDiv">
+        <img src="{{asset('bilder/3.jpg?auto=yes&bg=777&fg=555&text=1')}}" class="picture">
+    </div>
+    <div class="questions">
+        <h5>
+            Warum sollte man sich von der Technik distanzieren?
+        </h5>
+        <div>
+            <div>
+                Heutzutage möchten sich immer mehr Menschen von der Technik distanzieren.
+                Die am häufigsten genannten Gründe sind:
+                    Internet- und Social Media-Abhängikeit
+                    Druck der ständigen Erreichbarkeit
+                    Stärkung der Naturverbundenheit
+            </div>
+        </div>
+    </div>
+    <div class="pics container-fluid" id="picFourDiv">
+        <img src="{{asset('bilder/4.jpg?auto=yes&bg=777&fg=555&text=1')}}" class="picture">
+    </div>
+    <div class="questions">
+        <h5>
+            Gibt es Unterstützung für die Durchführung des Ausstiegs?
+        </h5>
+        <div>
+            <div>
+                Nein. Diese Seite unterstützt ausschließlich bei der Entscheidungsfindung.
             </div>
         </div>
     </div>

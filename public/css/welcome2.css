@@ -32,7 +32,7 @@ body {
     background-color: #1b1e21;
 }
 
-#picOne {
+.picture {
     display: block;
     margin-left: auto;
     margin-right: auto;
