@@ -66,10 +66,9 @@
                         <select class="form-control" id="regierungsform" name="regierungsform" required>
                             <option value="">Bitte wählen</option>
                             <option value="0">egal</option>
-                            <option value="Monarchie">Monarchie</option>
-                            <option value="Demokratie">Demokratie</option>
-                            <option value="Diktatur">Diktatur</option>
-                            <option value="Kommunismus">Kommunismus</option>
+                            <option value="monarchy">Monarchie</option>
+                            <option value="democracy">Demokratie</option>
+                            <option value="communist">Kommunismus</option>
                         </select>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-landmark"></i></span>

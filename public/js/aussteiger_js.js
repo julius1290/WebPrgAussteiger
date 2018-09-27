@@ -49,7 +49,6 @@ function createAlert(outputElement, cssClass, text, append = false) {
  */
 function sendData() {
     let error = false;
-console.log('lel');
     let geschlecht = $('#geschlecht').val();
     let religion = $('#religion').val();
     let regierungsform = $('#regierungsform').val();
