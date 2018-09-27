@@ -4,11 +4,11 @@ $(document).ready(function () {
     const controller = new ScrollMagic.Controller();
 
     //build a scene
-    const ourScene = new ScrollMagic.Scene( {
-        triggerElement: '#picSlider',
+    const picSlide = new ScrollMagic.Scene( {
+        triggerElement: '#pictureCarousel',
         triggerHook: 0.5,
     })
-        .setClassToggle('#picSlider', 'fade-in') // add class to slide in
+        .setClassToggle('#pictureCarousel', 'fade-in') // add class to slide in
         .addIndicators({
             name: 'fade-scene',
         })

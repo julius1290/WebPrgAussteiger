@@ -72,14 +72,14 @@ body {
 }
 
 
-#picSlider {
+#pictureCarousel {
     height: 40%;
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-out;
 }
 
-#picSlider.fade-in {
+#pictureCarousel.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
