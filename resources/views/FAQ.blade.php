@@ -15,7 +15,7 @@
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
         ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     <p></p>
-    <div id="accordion">
+    <div id="accordion" style="padding-top: 10px">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
