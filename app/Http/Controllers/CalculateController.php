@@ -9,23 +9,23 @@ class CalculateController extends Controller
 {
     function calculateResult(Request $request) {
 
-        $body = $request->getContent();
-        $body = json_decode($body, true);
-        $geschlecht = $body["geschlecht"];
-        $regierung = $body["regierungsform"];
-        $klima = $body["klima"];
-        $gesundheit = $body["gesundheit"];
-        $infrastruktur = $body["infrastruktur"];
-        $religion = $body["religion"];
-
+        $body          = $request->getContent();
+        $body          = json_decode($body, true);
+        
+        $geschlecht          = $body["geschlecht"];
+        $regierung           = $body["regierungsform"];
+        $klima               = $body["klima"];
+        $gesundheit          = $body["gesundheit"];
+        $infrastruktur       = $body["infrastruktur"];
+        $religion            = $body["religion"];
         $frauenfeindlichkeit = 1;
 
-        if($geschlecht != 1)
-            $frauenfeindlichkeit = 0;
+        if($geschlecht != 1) $frauenfeindlichkeit = 0;
 
         $klima_a = 1;
         $klima_b = 1;
 
+        // 0 für egal, warm, kalt, gemäßigt
         switch ($klima) {
             case "kalt":
                 $klima_a = -100;
@@ -39,28 +39,42 @@ class CalculateController extends Controller
                 $klima_a = 26;
                 $klima_b = 100;
                 break;
-            default:
+            case 0:
+                $klima_a = -100;
+                $klima_b = 100;
                 break;
         }
 
-        $gesundheit_a = $gesundheit-5;
-        $gesundheit_b = $gesundheit+5;
+        $gesundheit_a = 100-($gesundheit)*10-5;
+        $gesundheit_b = 100-($gesundheit)*10+5;
 
         $infrastruktur_a = $infrastruktur-2;
         $infrastruktur_b = $infrastruktur+2;
 
-        $wherestring = '';
-		if ($geschlecht != 1) $wherestring .= ' AND frauenfeindlichkeit=0';
-		if (!empty($regierung)) $wherestring .= ' AND regierungsform='.$regierung;
+        // Klima
+        $wherestring = ' WHERE durchschnittstemperatur BETWEEN '.$klima_a.' AND '.$klima_b;
+        
+        // 1 = Männlich, 2 = Weiblich, 0 = Geschlechtlos
+        // Wenn Geschlecht männlich ist, ist Frauenfeindlichkeit egal
+		if ($geschlecht != 1) $wherestring .= ' AND frauenfeindlichkeit=0'; // In DB: 0 für nicht frauenfeindlich
+        
+        // 0 für egal, Monarchie, Diktatur, Demokratie, Kommunismus
+		// empty prüft auch auf den Wert 0
+        if (!empty($regierung)) $wherestring .= ' AND regierungsform='.$regierung; // stehen so in DB
+        
+        // 0 für egal, Christentum, Islam, Buddhismus, Hindu, Atheist
 		if (!empty($religion)) $wherestring .= ' AND religion='.$religion;
 		
-		if (!empty($gesundheit)) $wherestring .= ' AND gesundheitindex BETWEEN '.$gesundheit_a.' AND '.$gesundheit_b; // 0-99 - sterblichkeitsrate
+        // Slider Gesundheit von 0 bis 10
+        // 100-9*10=10
+		if (!empty($gesundheit)) $wherestring .= ' AND gesundheitindex BETWEEN '.$gesundheit_a.' AND '.$gesundheit_b; // in DB: 0-99 -> Sterblichkeitsrate
+
+        // Slider Infrastruktur von 0 bis 10
 		if (!empty($infrastruktur)) $wherestring .= ' AND infrastrukturindex BETWEEN '.$infrastruktur_a.' AND '.$infrastruktur_b; // 0-5
 
-         $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur BETWEEN '.$klima_a.' AND '.$klima_b.$wherestring.' LIMIT 3');
-       // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur > 10');
+        $return = DB::select('SELECT * FROM aussteiger_table'.$wherestring.' LIMIT 3');
+        // $return = DB::select('SELECT * FROM aussteiger_table WHERE durchschnittstemperatur > 10');
 
     	return json_encode($return);
-
     }
 }
