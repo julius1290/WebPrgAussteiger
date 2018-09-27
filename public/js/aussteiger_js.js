@@ -3,10 +3,10 @@
 
 $( document ).ready(function() {
 	$.ajaxSetup({
-	    headers: {
-	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	    }
-	});
+       headers: {
+           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+       }
+   });
 
     $("#example-basic").steps({
         headerTag: "h3",
@@ -24,22 +24,22 @@ $( document ).ready(function() {
  * @param  {String}  text          [description]
  * @param  {Boolean} append        [description]
  */
-function createAlert(outputElement, cssClass, text, append = false) {
+ function createAlert(outputElement, cssClass, text, append = false) {
     if (append === false) $(outputElement).empty();
     let icon = null;
     switch (cssClass) {
         case "success": 
-          icon = '<i class="fa fa-check-circle"></i> '; 
-          break;
+        icon = '<i class="fa fa-check-circle"></i> '; 
+        break;
         case "danger": 
-          icon = '<i class="fa fa-exclamation-circle"></i> '; 
-          break;
+        icon = '<i class="fa fa-exclamation-circle"></i> '; 
+        break;
         case "warning": 
-          icon = '<i class="fa fa-exclamation-triangle"></i> '; 
-          break;
+        icon = '<i class="fa fa-exclamation-triangle"></i> '; 
+        break;
         case "info": 
-          icon = '<i class="fa fa-info-circle"></i> '; 
-          break;
+        icon = '<i class="fa fa-info-circle"></i> '; 
+        break;
     }
     $(outputElement).append('<div class="alert alert-' + cssClass + ' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>' + icon + ' ' + text + '</div>');
 }
@@ -47,39 +47,55 @@ function createAlert(outputElement, cssClass, text, append = false) {
 /**
  * Zeigt Ergebnisse an
  */
-function showData(data) {
-    let results = data;
+ function showData(results) {
     $("#results").empty();
     let html;
     if (results.length >= 1) {
         $("#alert").empty();
         for (let i = 0; i < results.length; i++) {
-            // html = '<div class="entry"><div class="entry-card"><div class="card-body"><h5 class="card-title">' + complaints[i].customer.name + '</h5><h6 class="card-subtitle mb-2 text-muted"><time>' + complaints[i].compDate + '</time> von ' + complaints[i].user.firstname + ' ' + complaints[i].user.lastname + '</h6><p class="card-text">' + complaints[i].details.substr(0, 100) + '...</p>';
-            // html += '</div><div id="card-footer-' + complaints[i].id + '" class="card-footer"><span class="card-link fas fa-edit" onclick="loadEditComplaint(' + complaints[i].id + ')" data-toggle="modal" data-target="#editComplaint"></span><span id="status-' + complaints[i].id + '" class="badge badge-pill badge-primary card-link" onclick="statusComplaint(' + complaints[i].id + ', ' + complaints[i].status + ')">' + statusName[complaints[i].status-1] + '</span></div></div>';
-            // $("#results").append(html);
+            let regierungDE;
+            let nr = i+1 + '. ';
+            let top = '';
+            if (i === 0) {
+                top = ' <span class="badge badge-secondary">TOP</span>';
+                initMap(parseFloat(results[i].latitude), parseFloat(results[i].longitude));
+            }
+            switch(results[i].regierungsform) {
+                case 'democracy':
+                regierungDE = 'Demokratie';
+                break;
+                case 'monarchy':
+                regierungDE = 'Monarchie';
+                break;
+                case 'communist':
+                regierungDE = 'Kommunismus';
+                break;
+            }
+            html = '<div class="entry col-4"><div class="card"><div class="card-body"><h5 class="card-title">' + nr + results[i].land + top + '</h5><p class="card-text">Religion: ' + results[i].religion + '</p><p class="card-text">Regierung: ' + regierungDE + '</p><p class="card-text">Temperatur: ' + results[i].durchschnittstemperatur + '°C</p></div></div>';
+            $("#results").append(html);
         }
     }
     else {
-            createAlert("#alert", "info", "Es wurden keine Ergebnisse gefunden.");
-        }
+        createAlert("#alert", "info", "Es wurden keine Ergebnisse gefunden.");
+    }
 
 }
 
 /**
  * Validieren und Senden der Daten
  */
-function sendData() {
+ function sendData() {
     let error = false;
-console.log('lel');
     let geschlecht = $("input[name='geschlecht']").val();;
     let religion = $('#religion').val();
     let regierungsform = $('#regierungsform').val();
     let klima = $('#klima').val();
     let gesundheit = $('#gesundheit').val();
     let infrastruktur = $('#infrastruktur').val();
-    if (geschlecht == '' || gesundheit == '' || infrastruktur == '') error = true;
+    if (geschlecht == '' || gesundheit == '' || infrastruktur == '' || religion == '' || regierungsform == '' || klima == '') error = true;
 
     if (error === false) {
+        createAlert("#alert", "info", "Daten werden geladen...");
         $.ajax({
             type: "POST",
             url: "/calculate",

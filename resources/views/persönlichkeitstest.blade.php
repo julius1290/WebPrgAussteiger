@@ -23,7 +23,7 @@
             background-color: #0065a8;
         }
     </style>
-    <div style="padding-top: 65px">
+    <div class="container" style="padding-top: 65px">
         <div id="example-basic">
             <h3>Angaben zur Person</h3>
             <section>
@@ -99,17 +99,36 @@
                 <div class="form-group">
                     <label for="infrastruktur">Infrastrukturindex</label>
                     <div class="input-group">
-                        <input type="range" class="custom-range" min="0" max="10"  name="infrastruktur"
+                        <input type="range" class="custom-range" min="0" max="5"  name="infrastruktur"
                                id="infrastruktur">
                     </div>
                 </div>
+                <button type="reset" class="btn btn-danger">Abbrechen</button>
+                <button type="submit" class="btn btn-success" onclick="sendData()">Suchen</button>
             </section>
         </div>
+        <div id="alert"></div>
+        <div id="results" class="row" style="margin: 20px 0"></div>
+        <style>
+      #map {
+        height: 500px; 
+        width: 100%;
+       }
+    </style>
+        <div id="map"></div>
+        <script>
+            function initMap(latitude, longitude) {
+                // var country = {lat: -25.344, lng: 131.036};
+              var country = {lat: latitude, lng: longitude};
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 4, center: country});
+              var marker = new google.maps.Marker({position: country, map: map});
+            }
+        </script>
     </div>
-    <div id="alert"></div>
-    <div id="results"></div>
-    <button type="reset" class="btn btn-danger">Abbrechen</button>
-    <button type="submit" class="btn btn-success" onclick="sendData()">Suchen</button>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5dtYryMno4iD8ILlVIIkUgzRCaVq2rCM&callback=initMap" -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5dtYryMno4iD8ILlVIIkUgzRCaVq2rCM"
+    async defer></script>
     <script src=" {{asset('js/jquery.steps.js') }} "></script>
     <script src=" {{asset('js/aussteiger_js.js') }} "></script>
 
