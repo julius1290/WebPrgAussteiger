@@ -50,21 +50,21 @@ function createAlert(outputElement, cssClass, text, append = false) {
 function sendData() {
     let error = false;
 console.log('lel');
-    let geschlecht = $("input[name='geschlecht']").val();
+    let geschlecht = $('#geschlecht').val();
     let religion = $('#religion').val();
     let regierungsform = $('#regierungsform').val();
     let klima = $('#klima').val();
     let gesundheit = $('#gesundheit').val();
     let infrastruktur = $('#infrastruktur').val();
     if (geschlecht == '' || gesundheit == '' || infrastruktur == '') error = true;
-console.log(religion);
+
     if (error === false) {
         $.ajax({
             type: "POST",
             url: "/calculate",
             cache: false,
             timeout: 5000,
-            data: JSON.stringify({geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion}),
+            data: {geschlecht: geschlecht, regierungsform: regierungsform, klima: klima, gesundheit: gesundheit, infrastruktur: infrastruktur, religion: religion},
             success: function(data) {
                 alert("lol");
                 data = JSON.parse(data);
