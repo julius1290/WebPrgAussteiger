@@ -30,4 +30,8 @@ class Controller extends BaseController
     function getImpressumView() {
         return view('impressum');
     }
+    function getFAQView() {
+        return view('FAQ');
+    }
+
 }

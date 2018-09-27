@@ -52,6 +52,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/impressum">Impressum</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/FAQ">FAQ</a>
+                </li>
             </ul>
         </div>
     </nav>
