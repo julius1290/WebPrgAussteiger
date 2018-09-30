@@ -9,9 +9,6 @@ $(document).ready(function () {
         triggerHook: 0.5,
     })
         .setClassToggle('#pictureCarousel', 'fade-in') // add class to slide in
-        .addIndicators({
-            name: 'fade-scene',
-        })
         .addTo(controller);
 
     const headline = new ScrollMagic.Scene({
